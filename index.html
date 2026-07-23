@@ -639,9 +639,10 @@
       <p>One model per game. Download the one you need, point PFMS at the file, and go.</p>
     </div>
 
-    <!-- Download links format: https://github.com/Pabloxdl/pfms-models/releases/download/models/FILENAME.onnx
-         Replace each FILENAME.onnx with the actual file you uploaded to the release. -->
-    <div class="model-list reveal">
+    <div class="model-list reveal" id="model-list">
+      <div style="padding:24px;text-align:center;color:var(--text-dim);font-size:14px;">Loading models...</div>
+    </div>
+    <p class="model-note reveal">All releases: <a href="https://github.com/Pabloxdl/pfms-models/releases" target="_blank" rel="noopener">github.com/Pabloxdl/pfms-models/releases →</a></p>
       <div class="model-row">
         <div>
           <div class="model-name">Fishing bar model</div>
@@ -740,6 +741,32 @@
   } else {
     els.forEach(function(el){ el.classList.add('in'); });
   }
+
+  // Fetch models from GitHub release
+  fetch('https://api.github.com/repos/Pabloxdl/pfms-models/releases/tags/models')
+    .then(function(r){ return r.json(); })
+    .then(function(release){
+      var list = document.getElementById('model-list');
+      if(!release || !release.assets || release.assets.length === 0){
+        list.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-dim);font-size:14px;">No models found in the release.</div>';
+        return;
+      }
+      var html = '';
+      release.assets.forEach(function(asset){
+        var name = asset.name;
+        var size = (asset.size / 1024 / 1024).toFixed(1) + ' MB';
+        var ext = name.split('.').pop().toUpperCase();
+        html += '<div class="model-row">' +
+          '<div><div class="model-name">' + name.replace('.' + ext.toLowerCase(), '') + '</div>' +
+          '<div class="model-meta">' + ext + ' \u00B7 ' + size + '</div></div>' +
+          '<a class="dl-btn" href="' + asset.browser_download_url + '" download>Download</a></div>';
+      });
+      list.innerHTML = html;
+    })
+    .catch(function(){
+      document.getElementById('model-list').innerHTML =
+        '<div style="padding:24px;text-align:center;color:var(--text-dim);font-size:14px;">Failed to load models. <a href="https://github.com/Pabloxdl/pfms-models/releases" style="color:var(--text);text-decoration:underline;">View on GitHub \u2192</a></div>';
+    });
 </script>
 
 </body>
