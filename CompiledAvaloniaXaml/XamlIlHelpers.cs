@@ -1,0 +1,1709 @@
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
+using Avalonia.Data;
+using Avalonia.Data.Converters;
+using Avalonia.Data.Core;
+using Avalonia.Media.Imaging;
+using Avalonia.Styling;
+using CommunityToolkit.Mvvm.Input;
+using Pfm.Core.Configuration;
+using Pfm.ViewModels;
+
+namespace CompiledAvaloniaXaml;
+
+[CompilerGenerated]
+internal class XamlIlHelpers
+{
+	private static IPropertyInfo Avalonia_002EStyling_002ESetter_002CAvalonia_002EBase_002EValue_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsConfigurations_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ENavigateCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsSettings_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartMacroCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopMacroCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStatusMessage_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EImportProfileCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECreateConfigurationCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurationCount_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurations_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImage_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EName_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsEnabled_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDescription_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EManagedModelName_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EToggleEnabledCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsDisabled_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EEditCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EExportProfileCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EHotkeyOptions_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartHotkey_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopHotkey_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EApplyHotkeysCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDataDirectory_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EOpenTemplatesCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EShowGameVisionOverlay_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsEditorOpen_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECloseEditorCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESelectedConfiguration_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImagePath_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseCoverImageCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseModelFileCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveModelCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EHasModel_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EConfidenceThreshold_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EAddCustomClassCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECustomClasses_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EId_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EName_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDetectionBehaviorOptions_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EBehavior_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EWeight_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EInfluenceFormula_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EPickColorCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EColorHintSwatch_0021Field;
+
+	private static IPropertyInfo Avalonia_002EData_002ECompiledBinding_002CAvalonia_002EBase_002EConverter_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EClearColorCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EHasColorHint_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveCustomClassCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringFormula_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EValidateSteeringCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringValidationMessage_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECastHoldTimeMs_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBiteTimeoutMs_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERecastDelayMs_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKp_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKd_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingDeadZonePixels_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingModeOptions_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingMode_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsTimingClick_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ETriggerFormula_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickCooldownMs_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickHoldDurationMs_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaX_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaY_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaWidth_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaHeight_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectFishingScanAreaCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPixelProgressEnabled_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaX_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaY_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaWidth_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaHeight_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectProgressScanAreaCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressRed_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressGreen_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressBlue_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressColorTolerance_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPickProgressColorCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeEnabled_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeVirtualKey_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeClickHoldMs_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDeleteConfigurationCommand_0021Field;
+
+	private static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESaveConfigurationCommand_0021Field;
+
+	private static object Avalonia_002EStyling_002ESetter_002CAvalonia_002EBase_002EValue_0021Getter(object P_0)
+	{
+		return ((Setter)P_0).Value;
+	}
+
+	private static void Avalonia_002EStyling_002ESetter_002CAvalonia_002EBase_002EValue_0021Setter(object P_0, object P_1)
+	{
+		((Setter)P_0).Value = P_1;
+	}
+
+	public static IPropertyInfo Avalonia_002EStyling_002ESetter_002CAvalonia_002EBase_002EValue_0021Property()
+	{
+		if (Avalonia_002EStyling_002ESetter_002CAvalonia_002EBase_002EValue_0021Field != null)
+		{
+			return Avalonia_002EStyling_002ESetter_002CAvalonia_002EBase_002EValue_0021Field;
+		}
+		Avalonia_002EStyling_002ESetter_002CAvalonia_002EBase_002EValue_0021Field = new ClrPropertyInfo("Value", Avalonia_002EStyling_002ESetter_002CAvalonia_002EBase_002EValue_0021Getter, Avalonia_002EStyling_002ESetter_002CAvalonia_002EBase_002EValue_0021Setter, typeof(object));
+		return Avalonia_002EStyling_002ESetter_002CAvalonia_002EBase_002EValue_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsConfigurations_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).IsConfigurations;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsConfigurations_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsConfigurations_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsConfigurations_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsConfigurations_0021Field = new ClrPropertyInfo("IsConfigurations", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsConfigurations_0021Getter, null, typeof(bool));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsConfigurations_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ENavigateCommand_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).NavigateCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ENavigateCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ENavigateCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ENavigateCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ENavigateCommand_0021Field = new ClrPropertyInfo("NavigateCommand", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ENavigateCommand_0021Getter, null, typeof(IRelayCommand<string>));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ENavigateCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsSettings_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).IsSettings;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsSettings_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsSettings_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsSettings_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsSettings_0021Field = new ClrPropertyInfo("IsSettings", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsSettings_0021Getter, null, typeof(bool));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsSettings_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartMacroCommand_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).StartMacroCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartMacroCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartMacroCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartMacroCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartMacroCommand_0021Field = new ClrPropertyInfo("StartMacroCommand", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartMacroCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartMacroCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopMacroCommand_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).StopMacroCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopMacroCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopMacroCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopMacroCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopMacroCommand_0021Field = new ClrPropertyInfo("StopMacroCommand", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopMacroCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopMacroCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStatusMessage_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).StatusMessage;
+	}
+
+	private static void Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStatusMessage_0021Setter(object P_0, object P_1)
+	{
+		((MainViewModel)P_0).StatusMessage = (string)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStatusMessage_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStatusMessage_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStatusMessage_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStatusMessage_0021Field = new ClrPropertyInfo("StatusMessage", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStatusMessage_0021Getter, Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStatusMessage_0021Setter, typeof(string));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStatusMessage_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EImportProfileCommand_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).ImportProfileCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EImportProfileCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EImportProfileCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EImportProfileCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EImportProfileCommand_0021Field = new ClrPropertyInfo("ImportProfileCommand", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EImportProfileCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EImportProfileCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECreateConfigurationCommand_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).CreateConfigurationCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECreateConfigurationCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECreateConfigurationCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECreateConfigurationCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECreateConfigurationCommand_0021Field = new ClrPropertyInfo("CreateConfigurationCommand", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECreateConfigurationCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECreateConfigurationCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurationCount_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).ConfigurationCount;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurationCount_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurationCount_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurationCount_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurationCount_0021Field = new ClrPropertyInfo("ConfigurationCount", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurationCount_0021Getter, null, typeof(int));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurationCount_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurations_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).Configurations;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurations_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurations_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurations_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurations_0021Field = new ClrPropertyInfo("Configurations", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurations_0021Getter, null, typeof(ObservableCollection<ConfigurationItemViewModel>));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EConfigurations_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImage_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).CoverImage;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImage_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImage_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImage_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImage_0021Field = new ClrPropertyInfo("CoverImage", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImage_0021Getter, null, typeof(Bitmap));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImage_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EName_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).Name;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EName_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).Name = (string)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EName_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EName_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EName_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EName_0021Field = new ClrPropertyInfo("Name", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EName_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EName_0021Setter, typeof(string));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EName_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsEnabled_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).IsEnabled;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsEnabled_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).IsEnabled = (bool)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsEnabled_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsEnabled_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsEnabled_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsEnabled_0021Field = new ClrPropertyInfo("IsEnabled", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsEnabled_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsEnabled_0021Setter, typeof(bool));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsEnabled_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDescription_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).Description;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDescription_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).Description = (string)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDescription_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDescription_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDescription_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDescription_0021Field = new ClrPropertyInfo("Description", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDescription_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDescription_0021Setter, typeof(string));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDescription_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EManagedModelName_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ManagedModelName;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EManagedModelName_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EManagedModelName_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EManagedModelName_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EManagedModelName_0021Field = new ClrPropertyInfo("ManagedModelName", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EManagedModelName_0021Getter, null, typeof(string));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EManagedModelName_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EToggleEnabledCommand_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ToggleEnabledCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EToggleEnabledCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EToggleEnabledCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EToggleEnabledCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EToggleEnabledCommand_0021Field = new ClrPropertyInfo("ToggleEnabledCommand", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EToggleEnabledCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EToggleEnabledCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsDisabled_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).IsDisabled;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsDisabled_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsDisabled_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsDisabled_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsDisabled_0021Field = new ClrPropertyInfo("IsDisabled", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsDisabled_0021Getter, null, typeof(bool));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsDisabled_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EEditCommand_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).EditCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EEditCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EEditCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EEditCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EEditCommand_0021Field = new ClrPropertyInfo("EditCommand", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EEditCommand_0021Getter, null, typeof(IRelayCommand));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EEditCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EExportProfileCommand_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).ExportProfileCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EExportProfileCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EExportProfileCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EExportProfileCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EExportProfileCommand_0021Field = new ClrPropertyInfo("ExportProfileCommand", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EExportProfileCommand_0021Getter, null, typeof(IAsyncRelayCommand<ConfigurationItemViewModel>));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EExportProfileCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EHotkeyOptions_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).HotkeyOptions;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EHotkeyOptions_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EHotkeyOptions_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EHotkeyOptions_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EHotkeyOptions_0021Field = new ClrPropertyInfo("HotkeyOptions", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EHotkeyOptions_0021Getter, null, typeof(IReadOnlyList<string>));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EHotkeyOptions_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartHotkey_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).StartHotkey;
+	}
+
+	private static void Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartHotkey_0021Setter(object P_0, object P_1)
+	{
+		((MainViewModel)P_0).StartHotkey = (string)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartHotkey_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartHotkey_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartHotkey_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartHotkey_0021Field = new ClrPropertyInfo("StartHotkey", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartHotkey_0021Getter, Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartHotkey_0021Setter, typeof(string));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStartHotkey_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopHotkey_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).StopHotkey;
+	}
+
+	private static void Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopHotkey_0021Setter(object P_0, object P_1)
+	{
+		((MainViewModel)P_0).StopHotkey = (string)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopHotkey_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopHotkey_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopHotkey_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopHotkey_0021Field = new ClrPropertyInfo("StopHotkey", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopHotkey_0021Getter, Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopHotkey_0021Setter, typeof(string));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EStopHotkey_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EApplyHotkeysCommand_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).ApplyHotkeysCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EApplyHotkeysCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EApplyHotkeysCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EApplyHotkeysCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EApplyHotkeysCommand_0021Field = new ClrPropertyInfo("ApplyHotkeysCommand", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EApplyHotkeysCommand_0021Getter, null, typeof(IRelayCommand));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EApplyHotkeysCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDataDirectory_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).DataDirectory;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDataDirectory_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDataDirectory_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDataDirectory_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDataDirectory_0021Field = new ClrPropertyInfo("DataDirectory", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDataDirectory_0021Getter, null, typeof(string));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDataDirectory_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EOpenTemplatesCommand_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).OpenTemplatesCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EOpenTemplatesCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EOpenTemplatesCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EOpenTemplatesCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EOpenTemplatesCommand_0021Field = new ClrPropertyInfo("OpenTemplatesCommand", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EOpenTemplatesCommand_0021Getter, null, typeof(IRelayCommand));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EOpenTemplatesCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EShowGameVisionOverlay_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).ShowGameVisionOverlay;
+	}
+
+	private static void Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EShowGameVisionOverlay_0021Setter(object P_0, object P_1)
+	{
+		((MainViewModel)P_0).ShowGameVisionOverlay = (bool)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EShowGameVisionOverlay_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EShowGameVisionOverlay_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EShowGameVisionOverlay_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EShowGameVisionOverlay_0021Field = new ClrPropertyInfo("ShowGameVisionOverlay", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EShowGameVisionOverlay_0021Getter, Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EShowGameVisionOverlay_0021Setter, typeof(bool));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EShowGameVisionOverlay_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsEditorOpen_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).IsEditorOpen;
+	}
+
+	private static void Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsEditorOpen_0021Setter(object P_0, object P_1)
+	{
+		((MainViewModel)P_0).IsEditorOpen = (bool)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsEditorOpen_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsEditorOpen_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsEditorOpen_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsEditorOpen_0021Field = new ClrPropertyInfo("IsEditorOpen", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsEditorOpen_0021Getter, Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsEditorOpen_0021Setter, typeof(bool));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EIsEditorOpen_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECloseEditorCommand_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).CloseEditorCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECloseEditorCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECloseEditorCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECloseEditorCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECloseEditorCommand_0021Field = new ClrPropertyInfo("CloseEditorCommand", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECloseEditorCommand_0021Getter, null, typeof(IRelayCommand));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ECloseEditorCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESelectedConfiguration_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).SelectedConfiguration;
+	}
+
+	private static void Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESelectedConfiguration_0021Setter(object P_0, object P_1)
+	{
+		((MainViewModel)P_0).SelectedConfiguration = (ConfigurationItemViewModel)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESelectedConfiguration_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESelectedConfiguration_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESelectedConfiguration_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESelectedConfiguration_0021Field = new ClrPropertyInfo("SelectedConfiguration", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESelectedConfiguration_0021Getter, Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESelectedConfiguration_0021Setter, typeof(ConfigurationItemViewModel));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESelectedConfiguration_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImagePath_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).CoverImagePath;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImagePath_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).CoverImagePath = (string)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImagePath_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImagePath_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImagePath_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImagePath_0021Field = new ClrPropertyInfo("CoverImagePath", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImagePath_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImagePath_0021Setter, typeof(string));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECoverImagePath_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseCoverImageCommand_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).BrowseCoverImageCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseCoverImageCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseCoverImageCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseCoverImageCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseCoverImageCommand_0021Field = new ClrPropertyInfo("BrowseCoverImageCommand", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseCoverImageCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseCoverImageCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseModelFileCommand_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).BrowseModelFileCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseModelFileCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseModelFileCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseModelFileCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseModelFileCommand_0021Field = new ClrPropertyInfo("BrowseModelFileCommand", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseModelFileCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBrowseModelFileCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveModelCommand_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).RemoveModelCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveModelCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveModelCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveModelCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveModelCommand_0021Field = new ClrPropertyInfo("RemoveModelCommand", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveModelCommand_0021Getter, null, typeof(IRelayCommand));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveModelCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EHasModel_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).HasModel;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EHasModel_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EHasModel_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EHasModel_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EHasModel_0021Field = new ClrPropertyInfo("HasModel", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EHasModel_0021Getter, null, typeof(bool));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EHasModel_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EConfidenceThreshold_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ConfidenceThreshold;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EConfidenceThreshold_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ConfidenceThreshold = (double)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EConfidenceThreshold_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EConfidenceThreshold_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EConfidenceThreshold_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EConfidenceThreshold_0021Field = new ClrPropertyInfo("ConfidenceThreshold", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EConfidenceThreshold_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EConfidenceThreshold_0021Setter, typeof(double));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EConfidenceThreshold_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EAddCustomClassCommand_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).AddCustomClassCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EAddCustomClassCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EAddCustomClassCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EAddCustomClassCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EAddCustomClassCommand_0021Field = new ClrPropertyInfo("AddCustomClassCommand", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EAddCustomClassCommand_0021Getter, null, typeof(IRelayCommand));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EAddCustomClassCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECustomClasses_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).CustomClasses;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECustomClasses_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECustomClasses_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECustomClasses_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECustomClasses_0021Field = new ClrPropertyInfo("CustomClasses", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECustomClasses_0021Getter, null, typeof(ObservableCollection<DetectionClassViewModel>));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECustomClasses_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EId_0021Getter(object P_0)
+	{
+		return ((DetectionClassViewModel)P_0).Id;
+	}
+
+	private static void Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EId_0021Setter(object P_0, object P_1)
+	{
+		((DetectionClassViewModel)P_0).Id = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EId_0021Property()
+	{
+		if (Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EId_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EId_0021Field;
+		}
+		Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EId_0021Field = new ClrPropertyInfo("Id", Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EId_0021Getter, Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EId_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EId_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EName_0021Getter(object P_0)
+	{
+		return ((DetectionClassViewModel)P_0).Name;
+	}
+
+	private static void Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EName_0021Setter(object P_0, object P_1)
+	{
+		((DetectionClassViewModel)P_0).Name = (string)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EName_0021Property()
+	{
+		if (Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EName_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EName_0021Field;
+		}
+		Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EName_0021Field = new ClrPropertyInfo("Name", Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EName_0021Getter, Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EName_0021Setter, typeof(string));
+		return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EName_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDetectionBehaviorOptions_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).DetectionBehaviorOptions;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDetectionBehaviorOptions_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDetectionBehaviorOptions_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDetectionBehaviorOptions_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDetectionBehaviorOptions_0021Field = new ClrPropertyInfo("DetectionBehaviorOptions", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDetectionBehaviorOptions_0021Getter, null, typeof(IReadOnlyList<DetectionBehavior>));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EDetectionBehaviorOptions_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EBehavior_0021Getter(object P_0)
+	{
+		return ((DetectionClassViewModel)P_0).Behavior;
+	}
+
+	private static void Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EBehavior_0021Setter(object P_0, object P_1)
+	{
+		((DetectionClassViewModel)P_0).Behavior = (DetectionBehavior)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EBehavior_0021Property()
+	{
+		if (Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EBehavior_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EBehavior_0021Field;
+		}
+		Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EBehavior_0021Field = new ClrPropertyInfo("Behavior", Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EBehavior_0021Getter, Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EBehavior_0021Setter, typeof(DetectionBehavior));
+		return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EBehavior_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EWeight_0021Getter(object P_0)
+	{
+		return ((DetectionClassViewModel)P_0).Weight;
+	}
+
+	private static void Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EWeight_0021Setter(object P_0, object P_1)
+	{
+		((DetectionClassViewModel)P_0).Weight = (double)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EWeight_0021Property()
+	{
+		if (Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EWeight_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EWeight_0021Field;
+		}
+		Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EWeight_0021Field = new ClrPropertyInfo("Weight", Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EWeight_0021Getter, Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EWeight_0021Setter, typeof(double));
+		return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EWeight_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EInfluenceFormula_0021Getter(object P_0)
+	{
+		return ((DetectionClassViewModel)P_0).InfluenceFormula;
+	}
+
+	private static void Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EInfluenceFormula_0021Setter(object P_0, object P_1)
+	{
+		((DetectionClassViewModel)P_0).InfluenceFormula = (string)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EInfluenceFormula_0021Property()
+	{
+		if (Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EInfluenceFormula_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EInfluenceFormula_0021Field;
+		}
+		Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EInfluenceFormula_0021Field = new ClrPropertyInfo("InfluenceFormula", Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EInfluenceFormula_0021Getter, Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EInfluenceFormula_0021Setter, typeof(string));
+		return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EInfluenceFormula_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EPickColorCommand_0021Getter(object P_0)
+	{
+		return ((DetectionClassViewModel)P_0).PickColorCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EPickColorCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EPickColorCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EPickColorCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EPickColorCommand_0021Field = new ClrPropertyInfo("PickColorCommand", Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EPickColorCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EPickColorCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EColorHintSwatch_0021Getter(object P_0)
+	{
+		return ((DetectionClassViewModel)P_0).ColorHintSwatch;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EColorHintSwatch_0021Property()
+	{
+		if (Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EColorHintSwatch_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EColorHintSwatch_0021Field;
+		}
+		Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EColorHintSwatch_0021Field = new ClrPropertyInfo("ColorHintSwatch", Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EColorHintSwatch_0021Getter, null, typeof(string));
+		return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EColorHintSwatch_0021Field;
+	}
+
+	private static object Avalonia_002EData_002ECompiledBinding_002CAvalonia_002EBase_002EConverter_0021Getter(object P_0)
+	{
+		return ((CompiledBinding)P_0).Converter;
+	}
+
+	private static void Avalonia_002EData_002ECompiledBinding_002CAvalonia_002EBase_002EConverter_0021Setter(object P_0, object P_1)
+	{
+		((CompiledBinding)P_0).Converter = (IValueConverter)P_1;
+	}
+
+	public static IPropertyInfo Avalonia_002EData_002ECompiledBinding_002CAvalonia_002EBase_002EConverter_0021Property()
+	{
+		if (Avalonia_002EData_002ECompiledBinding_002CAvalonia_002EBase_002EConverter_0021Field != null)
+		{
+			return Avalonia_002EData_002ECompiledBinding_002CAvalonia_002EBase_002EConverter_0021Field;
+		}
+		Avalonia_002EData_002ECompiledBinding_002CAvalonia_002EBase_002EConverter_0021Field = new ClrPropertyInfo("Converter", Avalonia_002EData_002ECompiledBinding_002CAvalonia_002EBase_002EConverter_0021Getter, Avalonia_002EData_002ECompiledBinding_002CAvalonia_002EBase_002EConverter_0021Setter, typeof(IValueConverter));
+		return Avalonia_002EData_002ECompiledBinding_002CAvalonia_002EBase_002EConverter_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EClearColorCommand_0021Getter(object P_0)
+	{
+		return ((DetectionClassViewModel)P_0).ClearColorCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EClearColorCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EClearColorCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EClearColorCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EClearColorCommand_0021Field = new ClrPropertyInfo("ClearColorCommand", Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EClearColorCommand_0021Getter, null, typeof(IRelayCommand));
+		return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EClearColorCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EHasColorHint_0021Getter(object P_0)
+	{
+		return ((DetectionClassViewModel)P_0).HasColorHint;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EHasColorHint_0021Property()
+	{
+		if (Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EHasColorHint_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EHasColorHint_0021Field;
+		}
+		Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EHasColorHint_0021Field = new ClrPropertyInfo("HasColorHint", Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EHasColorHint_0021Getter, null, typeof(bool));
+		return Pfm_002EViewModels_002EDetectionClassViewModel_002CPFMS_002EHasColorHint_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveCustomClassCommand_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).RemoveCustomClassCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveCustomClassCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveCustomClassCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveCustomClassCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveCustomClassCommand_0021Field = new ClrPropertyInfo("RemoveCustomClassCommand", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveCustomClassCommand_0021Getter, null, typeof(IRelayCommand<DetectionClassViewModel>));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERemoveCustomClassCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringFormula_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).SteeringFormula;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringFormula_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).SteeringFormula = (string)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringFormula_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringFormula_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringFormula_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringFormula_0021Field = new ClrPropertyInfo("SteeringFormula", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringFormula_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringFormula_0021Setter, typeof(string));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringFormula_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EValidateSteeringCommand_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ValidateSteeringCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EValidateSteeringCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EValidateSteeringCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EValidateSteeringCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EValidateSteeringCommand_0021Field = new ClrPropertyInfo("ValidateSteeringCommand", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EValidateSteeringCommand_0021Getter, null, typeof(IRelayCommand));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EValidateSteeringCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringValidationMessage_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).SteeringValidationMessage;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringValidationMessage_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).SteeringValidationMessage = (string)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringValidationMessage_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringValidationMessage_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringValidationMessage_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringValidationMessage_0021Field = new ClrPropertyInfo("SteeringValidationMessage", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringValidationMessage_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringValidationMessage_0021Setter, typeof(string));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESteeringValidationMessage_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECastHoldTimeMs_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).CastHoldTimeMs;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECastHoldTimeMs_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).CastHoldTimeMs = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECastHoldTimeMs_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECastHoldTimeMs_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECastHoldTimeMs_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECastHoldTimeMs_0021Field = new ClrPropertyInfo("CastHoldTimeMs", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECastHoldTimeMs_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECastHoldTimeMs_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ECastHoldTimeMs_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBiteTimeoutMs_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).BiteTimeoutMs;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBiteTimeoutMs_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).BiteTimeoutMs = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBiteTimeoutMs_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBiteTimeoutMs_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBiteTimeoutMs_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBiteTimeoutMs_0021Field = new ClrPropertyInfo("BiteTimeoutMs", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBiteTimeoutMs_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBiteTimeoutMs_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EBiteTimeoutMs_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERecastDelayMs_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).RecastDelayMs;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERecastDelayMs_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).RecastDelayMs = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERecastDelayMs_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERecastDelayMs_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERecastDelayMs_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERecastDelayMs_0021Field = new ClrPropertyInfo("RecastDelayMs", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERecastDelayMs_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERecastDelayMs_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ERecastDelayMs_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKp_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).FishingKp;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKp_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).FishingKp = (double)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKp_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKp_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKp_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKp_0021Field = new ClrPropertyInfo("FishingKp", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKp_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKp_0021Setter, typeof(double));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKp_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKd_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).FishingKd;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKd_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).FishingKd = (double)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKd_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKd_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKd_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKd_0021Field = new ClrPropertyInfo("FishingKd", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKd_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKd_0021Setter, typeof(double));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingKd_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingDeadZonePixels_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).FishingDeadZonePixels;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingDeadZonePixels_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).FishingDeadZonePixels = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingDeadZonePixels_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingDeadZonePixels_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingDeadZonePixels_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingDeadZonePixels_0021Field = new ClrPropertyInfo("FishingDeadZonePixels", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingDeadZonePixels_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingDeadZonePixels_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingDeadZonePixels_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingModeOptions_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).FishingModeOptions;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingModeOptions_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingModeOptions_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingModeOptions_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingModeOptions_0021Field = new ClrPropertyInfo("FishingModeOptions", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingModeOptions_0021Getter, null, typeof(IReadOnlyList<FishingMode>));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingModeOptions_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingMode_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).FishingMode;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingMode_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).FishingMode = (FishingMode)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingMode_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingMode_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingMode_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingMode_0021Field = new ClrPropertyInfo("FishingMode", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingMode_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingMode_0021Setter, typeof(FishingMode));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EFishingMode_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsTimingClick_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).IsTimingClick;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsTimingClick_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsTimingClick_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsTimingClick_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsTimingClick_0021Field = new ClrPropertyInfo("IsTimingClick", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsTimingClick_0021Getter, null, typeof(bool));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EIsTimingClick_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ETriggerFormula_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).TriggerFormula;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ETriggerFormula_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).TriggerFormula = (string)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ETriggerFormula_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ETriggerFormula_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ETriggerFormula_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ETriggerFormula_0021Field = new ClrPropertyInfo("TriggerFormula", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ETriggerFormula_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ETriggerFormula_0021Setter, typeof(string));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ETriggerFormula_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickCooldownMs_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ClickCooldownMs;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickCooldownMs_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ClickCooldownMs = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickCooldownMs_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickCooldownMs_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickCooldownMs_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickCooldownMs_0021Field = new ClrPropertyInfo("ClickCooldownMs", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickCooldownMs_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickCooldownMs_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickCooldownMs_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickHoldDurationMs_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ClickHoldDurationMs;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickHoldDurationMs_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ClickHoldDurationMs = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickHoldDurationMs_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickHoldDurationMs_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickHoldDurationMs_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickHoldDurationMs_0021Field = new ClrPropertyInfo("ClickHoldDurationMs", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickHoldDurationMs_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickHoldDurationMs_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EClickHoldDurationMs_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaX_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ScanAreaX;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaX_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ScanAreaX = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaX_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaX_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaX_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaX_0021Field = new ClrPropertyInfo("ScanAreaX", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaX_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaX_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaX_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaY_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ScanAreaY;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaY_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ScanAreaY = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaY_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaY_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaY_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaY_0021Field = new ClrPropertyInfo("ScanAreaY", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaY_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaY_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaY_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaWidth_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ScanAreaWidth;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaWidth_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ScanAreaWidth = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaWidth_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaWidth_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaWidth_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaWidth_0021Field = new ClrPropertyInfo("ScanAreaWidth", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaWidth_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaWidth_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaWidth_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaHeight_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ScanAreaHeight;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaHeight_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ScanAreaHeight = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaHeight_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaHeight_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaHeight_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaHeight_0021Field = new ClrPropertyInfo("ScanAreaHeight", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaHeight_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaHeight_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EScanAreaHeight_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectFishingScanAreaCommand_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).SelectFishingScanAreaCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectFishingScanAreaCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectFishingScanAreaCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectFishingScanAreaCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectFishingScanAreaCommand_0021Field = new ClrPropertyInfo("SelectFishingScanAreaCommand", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectFishingScanAreaCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectFishingScanAreaCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPixelProgressEnabled_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).PixelProgressEnabled;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPixelProgressEnabled_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).PixelProgressEnabled = (bool)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPixelProgressEnabled_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPixelProgressEnabled_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPixelProgressEnabled_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPixelProgressEnabled_0021Field = new ClrPropertyInfo("PixelProgressEnabled", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPixelProgressEnabled_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPixelProgressEnabled_0021Setter, typeof(bool));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPixelProgressEnabled_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaX_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ProgressAreaX;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaX_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ProgressAreaX = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaX_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaX_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaX_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaX_0021Field = new ClrPropertyInfo("ProgressAreaX", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaX_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaX_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaX_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaY_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ProgressAreaY;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaY_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ProgressAreaY = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaY_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaY_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaY_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaY_0021Field = new ClrPropertyInfo("ProgressAreaY", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaY_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaY_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaY_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaWidth_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ProgressAreaWidth;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaWidth_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ProgressAreaWidth = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaWidth_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaWidth_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaWidth_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaWidth_0021Field = new ClrPropertyInfo("ProgressAreaWidth", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaWidth_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaWidth_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaWidth_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaHeight_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ProgressAreaHeight;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaHeight_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ProgressAreaHeight = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaHeight_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaHeight_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaHeight_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaHeight_0021Field = new ClrPropertyInfo("ProgressAreaHeight", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaHeight_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaHeight_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressAreaHeight_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectProgressScanAreaCommand_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).SelectProgressScanAreaCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectProgressScanAreaCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectProgressScanAreaCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectProgressScanAreaCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectProgressScanAreaCommand_0021Field = new ClrPropertyInfo("SelectProgressScanAreaCommand", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectProgressScanAreaCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002ESelectProgressScanAreaCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressRed_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ProgressRed;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressRed_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ProgressRed = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressRed_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressRed_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressRed_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressRed_0021Field = new ClrPropertyInfo("ProgressRed", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressRed_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressRed_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressRed_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressGreen_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ProgressGreen;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressGreen_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ProgressGreen = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressGreen_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressGreen_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressGreen_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressGreen_0021Field = new ClrPropertyInfo("ProgressGreen", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressGreen_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressGreen_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressGreen_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressBlue_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ProgressBlue;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressBlue_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ProgressBlue = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressBlue_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressBlue_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressBlue_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressBlue_0021Field = new ClrPropertyInfo("ProgressBlue", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressBlue_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressBlue_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressBlue_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressColorTolerance_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ProgressColorTolerance;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressColorTolerance_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ProgressColorTolerance = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressColorTolerance_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressColorTolerance_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressColorTolerance_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressColorTolerance_0021Field = new ClrPropertyInfo("ProgressColorTolerance", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressColorTolerance_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressColorTolerance_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EProgressColorTolerance_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPickProgressColorCommand_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).PickProgressColorCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPickProgressColorCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPickProgressColorCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPickProgressColorCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPickProgressColorCommand_0021Field = new ClrPropertyInfo("PickProgressColorCommand", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPickProgressColorCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EPickProgressColorCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeEnabled_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ShakeEnabled;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeEnabled_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ShakeEnabled = (bool)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeEnabled_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeEnabled_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeEnabled_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeEnabled_0021Field = new ClrPropertyInfo("ShakeEnabled", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeEnabled_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeEnabled_0021Setter, typeof(bool));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeEnabled_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeVirtualKey_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ShakeVirtualKey;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeVirtualKey_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ShakeVirtualKey = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeVirtualKey_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeVirtualKey_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeVirtualKey_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeVirtualKey_0021Field = new ClrPropertyInfo("ShakeVirtualKey", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeVirtualKey_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeVirtualKey_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeVirtualKey_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeClickHoldMs_0021Getter(object P_0)
+	{
+		return ((ConfigurationItemViewModel)P_0).ShakeClickHoldMs;
+	}
+
+	private static void Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeClickHoldMs_0021Setter(object P_0, object P_1)
+	{
+		((ConfigurationItemViewModel)P_0).ShakeClickHoldMs = (int)P_1;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeClickHoldMs_0021Property()
+	{
+		if (Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeClickHoldMs_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeClickHoldMs_0021Field;
+		}
+		Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeClickHoldMs_0021Field = new ClrPropertyInfo("ShakeClickHoldMs", Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeClickHoldMs_0021Getter, Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeClickHoldMs_0021Setter, typeof(int));
+		return Pfm_002EViewModels_002EConfigurationItemViewModel_002CPFMS_002EShakeClickHoldMs_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDeleteConfigurationCommand_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).DeleteConfigurationCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDeleteConfigurationCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDeleteConfigurationCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDeleteConfigurationCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDeleteConfigurationCommand_0021Field = new ClrPropertyInfo("DeleteConfigurationCommand", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDeleteConfigurationCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002EDeleteConfigurationCommand_0021Field;
+	}
+
+	private static object Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESaveConfigurationCommand_0021Getter(object P_0)
+	{
+		return ((MainViewModel)P_0).SaveConfigurationCommand;
+	}
+
+	public static IPropertyInfo Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESaveConfigurationCommand_0021Property()
+	{
+		if (Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESaveConfigurationCommand_0021Field != null)
+		{
+			return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESaveConfigurationCommand_0021Field;
+		}
+		Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESaveConfigurationCommand_0021Field = new ClrPropertyInfo("SaveConfigurationCommand", Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESaveConfigurationCommand_0021Getter, null, typeof(IAsyncRelayCommand));
+		return Pfm_002EViewModels_002EMainViewModel_002CPFMS_002ESaveConfigurationCommand_0021Field;
+	}
+}

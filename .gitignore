@@ -1,0 +1,21 @@
+bin/
+obj/
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.nupkg
+original-runtime/
+
+# Local application data and model files
+*.onnx
+*.pt
+*.pth
+configurations.json
+settings.json
+models/
+templates/
+
+# Decompiled tool output
+*.log
