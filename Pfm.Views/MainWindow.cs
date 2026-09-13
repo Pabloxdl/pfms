@@ -3,6 +3,7 @@ using System.CodeDom.Compiler;
 using System.Collections;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -11,12 +12,14 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Controls.Shapes;
+using Avalonia.Controls.Templates;
 using Avalonia.Data;
 using Avalonia.Data.Converters;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
+using Avalonia.Markup.Xaml.MarkupExtensions;
 using Avalonia.Markup.Xaml.Converters;
 using Avalonia.Markup.Xaml.MarkupExtensions;
 using Avalonia.Markup.Xaml.MarkupExtensions.CompiledBindings;
@@ -627,6 +630,8 @@ public class MainWindow : Window
 
 	private Canvas? _barStripCanvas;
 
+	private Grid? _rodCatalogView;
+
 	[CompilerGenerated]
 	private static Action<object> _0021XamlIlPopulateOverride;
 
@@ -642,11 +647,16 @@ public class MainWindow : Window
 		if (base.DataContext is MainViewModel mainViewModel)
 		{
 			mainViewModel.PropertyChanged += OnViewModelPropertyChanged;
+			BuildRodCatalog(mainViewModel);
 		}
 	}
 
 	private void OnViewModelPropertyChanged(object? sender, PropertyChangedEventArgs e)
 	{
+		if (e.PropertyName == "IsEditorOpen" && _rodCatalogView != null && sender is MainViewModel viewModel)
+		{
+			_rodCatalogView.IsVisible = !viewModel.IsEditorOpen;
+		}
 		if (e.PropertyName == "VisionBarStrip")
 		{
 			if (_barStripCanvas == null)
@@ -658,6 +668,201 @@ public class MainWindow : Window
 				RenderBarStrip(_barStripCanvas, mainViewModel.VisionBarStrip);
 			}
 		}
+	}
+
+	private void BuildRodCatalog(MainViewModel viewModel)
+	{
+		if (_rodCatalogView != null || base.Content is not Border shell || shell.Child is not Grid shellGrid)
+		{
+			return;
+		}
+
+		Grid catalog = new Grid
+		{
+			Background = new SolidColorBrush(Color.Parse("#0B0D0D")),
+			RowDefinitions = new RowDefinitions("58,*,34"),
+			Margin = new Thickness(0),
+			IsVisible = !viewModel.IsEditorOpen
+		};
+		Grid.SetRow(catalog, 1);
+		shellGrid.Children.Add(catalog);
+		_rodCatalogView = catalog;
+
+		Grid toolbar = new Grid
+		{
+			Background = new SolidColorBrush(Color.Parse("#111615")),
+			ColumnDefinitions = new ColumnDefinitions("220,Auto,*,Auto,Auto"),
+			Margin = new Thickness(0, 0, 0, 1)
+		};
+		catalog.Children.Add(toolbar);
+
+		ComboBox category = new ComboBox
+		{
+			Classes = { "catalog-category" },
+			ItemsSource = new[] { "Fishing Rods", "Harpoon Guns", "Spears" },
+			SelectedIndex = 0,
+			Margin = new Thickness(14, 9, 10, 9),
+			HorizontalContentAlignment = HorizontalAlignment.Left
+		};
+		toolbar.Children.Add(category);
+
+		TextBlock unlocked = new TextBlock
+		{
+			Text = "64% Unlocked",
+			FontStyle = FontStyle.Italic,
+			VerticalAlignment = VerticalAlignment.Center,
+			Foreground = new SolidColorBrush(Color.Parse("#C5FF6D")),
+			FontWeight = FontWeight.SemiBold
+		};
+		Grid.SetColumn(unlocked, 1);
+		toolbar.Children.Add(unlocked);
+
+		TextBox search = new TextBox
+		{
+			Watermark = "Search Rods...",
+			Margin = new Thickness(12, 10, 8, 10),
+			HorizontalContentAlignment = HorizontalAlignment.Left,
+			Classes = { "catalog-search" }
+		};
+		Grid.SetColumn(search, 2);
+		toolbar.Children.Add(search);
+
+		Button viewMode = new Button
+		{
+			Content = "▦",
+			Classes = { "catalog-icon-button" },
+			Margin = new Thickness(4, 9, 4, 9)
+		};
+		ToolTip.SetTip(viewMode, "Toggle catalog view");
+		Grid.SetColumn(viewMode, 3);
+		toolbar.Children.Add(viewMode);
+
+		Button menu = new Button
+		{
+			Content = "☰",
+			Classes = { "catalog-icon-button" },
+			Margin = new Thickness(4, 9, 12, 9)
+		};
+		ToolTip.SetTip(menu, "Open menu");
+		menu.Click += (_, _) => category.IsDropDownOpen = !category.IsDropDownOpen;
+		Grid.SetColumn(menu, 4);
+		toolbar.Children.Add(menu);
+
+		ScrollViewer rail = new ScrollViewer
+		{
+			HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
+			VerticalScrollBarVisibility = ScrollBarVisibility.Disabled,
+			Padding = new Thickness(14, 12, 14, 8)
+		};
+		Grid.SetRow(rail, 1);
+		catalog.Children.Add(rail);
+
+		ItemsControl rods = new ItemsControl
+		{
+			ItemsPanel = new FuncTemplate<Panel>(() => new WrapPanel { Orientation = Orientation.Horizontal, ItemWidth = 244, ItemHeight = 520 }),
+			ItemTemplate = new FuncDataTemplate<ConfigurationItemViewModel>((item, _) => BuildRodCard(item), supportsRecycling: false)
+		};
+		rods.ItemsSource = viewModel.Configurations;
+		search.TextChanged += (_, _) =>
+		{
+			string query = search.Text?.Trim() ?? string.Empty;
+			rods.ItemsSource = string.IsNullOrEmpty(query)
+				? viewModel.Configurations
+				: viewModel.Configurations.Where(rod => rod.Name.Contains(query, StringComparison.OrdinalIgnoreCase)).ToArray();
+		};
+		rail.Content = rods;
+
+		Grid footer = new Grid
+		{
+			ColumnDefinitions = new ColumnDefinitions("*,Auto"),
+			Background = new SolidColorBrush(Color.Parse("#111615")),
+			Margin = new Thickness(16, 0)
+		};
+		Grid.SetRow(footer, 2);
+		catalog.Children.Add(footer);
+		TextBlock footerText = new TextBlock
+		{
+			Text = "PFMS / FISHING RODS",
+			VerticalAlignment = VerticalAlignment.Center,
+			Foreground = new SolidColorBrush(Color.Parse("#66736B")),
+			FontSize = 10,
+			LetterSpacing = 1.2
+		};
+		footer.Children.Add(footerText);
+		TextBlock count = new TextBlock
+		{
+			VerticalAlignment = VerticalAlignment.Center,
+			Foreground = new SolidColorBrush(Color.Parse("#8A968F")),
+			FontSize = 11
+		};
+		count.Text = viewModel.ConfigurationCount + " rods";
+		Grid.SetColumn(count, 1);
+		footer.Children.Add(count);
+	}
+
+	private static Control BuildRodCard(ConfigurationItemViewModel item)
+	{
+		Border card = new Border
+		{
+			Background = new SolidColorBrush(Color.Parse("#151C19")),
+			BorderBrush = new SolidColorBrush(Color.Parse("#425048")),
+			BorderThickness = new Thickness(1),
+			Margin = new Thickness(0, 0, 12, 0),
+			Padding = new Thickness(10),
+			CornerRadius = new CornerRadius(2)
+		};
+		Grid body = new Grid
+		{
+			RowDefinitions = new RowDefinitions("* ,Auto,Auto"),
+			MinWidth = 220
+		};
+		card.Child = body;
+
+		Grid imageFrame = new Grid { Background = new SolidColorBrush(Color.Parse("#080A0A")) };
+		Image image = new Image { Stretch = Stretch.Uniform, Opacity = 0.95 };
+		image.Source = item.CoverImage;
+		imageFrame.Children.Add(image);
+		StackPanel imageStats = new StackPanel { Margin = new Thickness(8), Spacing = 3, VerticalAlignment = VerticalAlignment.Top };
+		imageStats.Children.Add(BoundText("Model", item.Model.Fishing.Mode.ToString(), "#C5FF6D"));
+		imageStats.Children.Add(BoundText("FPS", item.Model.Fishing.Rod.TargetFramesPerSecond.ToString(), "#E9F0E8"));
+		imageStats.Children.Add(BoundText("AI class", item.Model.Fishing.TargetClassId.ToString(), "#E9F0E8"));
+		imageFrame.Children.Add(imageStats);
+		Grid.SetRow(imageFrame, 0);
+		body.Children.Add(imageFrame);
+
+		StackPanel caption = new StackPanel { Margin = new Thickness(4, 10, 4, 8), Spacing = 4 };
+		TextBlock name = new TextBlock { FontSize = 15, FontWeight = FontWeight.Bold, Foreground = new SolidColorBrush(Color.Parse("#E9F0E8")), TextWrapping = TextWrapping.Wrap };
+		name.Text = item.Name;
+		caption.Children.Add(name);
+		TextBlock description = new TextBlock { FontSize = 10, Foreground = new SolidColorBrush(Color.Parse("#8A968F")), TextWrapping = TextWrapping.Wrap, MaxHeight = 34 };
+		description.Text = item.Description;
+		caption.Children.Add(description);
+		Grid.SetRow(caption, 1);
+		body.Children.Add(caption);
+
+		Grid actions = new Grid { ColumnDefinitions = new ColumnDefinitions("Auto,Auto,*,Auto"), ColumnSpacing = 5 };
+		Button favorite = new Button { Content = "☆", Classes = { "catalog-icon-button" } };
+		ToolTip.SetTip(favorite, "Favorite");
+		actions.Children.Add(favorite);
+		Button edit = new Button { Content = "✎", Classes = { "catalog-icon-button" } };
+		ToolTip.SetTip(edit, "Edit rod configuration");
+		edit.Command = item.EditCommand;
+		Grid.SetColumn(edit, 1);
+		actions.Children.Add(edit);
+		Button equip = new Button { Content = "[Equip]", Classes = { "equip-button" }, HorizontalAlignment = HorizontalAlignment.Stretch };
+		equip.Command = item.ToggleEnabledCommand;
+		Grid.SetColumn(equip, 3);
+		actions.Children.Add(equip);
+		Grid.SetRow(actions, 2);
+		body.Children.Add(actions);
+		return card;
+	}
+
+	private static TextBlock BoundText(string label, string value, string color)
+	{
+		TextBlock text = new TextBlock { FontSize = 10, Foreground = new SolidColorBrush(Color.Parse(color)), FontStyle = FontStyle.Italic };
+		text.Text = label + ": " + value;
+		return text;
 	}
 
 	private static void RenderBarStrip(Canvas canvas, BarStripFrame? strip)
