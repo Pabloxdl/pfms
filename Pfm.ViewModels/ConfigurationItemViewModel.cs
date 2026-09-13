@@ -1295,10 +1295,19 @@ public sealed class ConfigurationItemViewModel : ViewModelBase
 		_coverImage = null;
 		try
 		{
-			if (File.Exists(Model.CoverImagePath))
+			string coverPath = Model.CoverImagePath;
+			if (File.Exists(coverPath))
 			{
-				using FileStream stream = File.OpenRead(Model.CoverImagePath);
+				using FileStream stream = File.OpenRead(coverPath);
 				_coverImage = new Bitmap(stream);
+			}
+			else
+			{
+				using Stream? stream = typeof(ConfigurationItemViewModel).Assembly.GetManifestResourceStream("PFMS.Assets.rod-icon.png");
+				if (stream != null)
+				{
+					_coverImage = new Bitmap(stream);
+				}
 			}
 		}
 		catch

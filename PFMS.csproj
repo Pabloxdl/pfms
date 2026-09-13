@@ -24,6 +24,7 @@
     <None Include="original-runtime\libSkiaSharp.dll" Link="libSkiaSharp.dll" CopyToOutputDirectory="PreserveNewest" />
     <None Include="original-runtime\libHarfBuzzSharp.dll" Link="libHarfBuzzSharp.dll" CopyToOutputDirectory="PreserveNewest" />
     <None Include="original-runtime\av_libglesv2.dll" Link="av_libglesv2.dll" CopyToOutputDirectory="PreserveNewest" />
+    <EmbeddedResource Include="Assets\rod-icon.png" LogicalName="PFMS.Assets.rod-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Avalonia.Controls">

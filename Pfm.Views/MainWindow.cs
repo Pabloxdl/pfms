@@ -820,14 +820,14 @@ public class MainWindow : Window
 		((ISupportInitialize)P_1).BeginInit();
 		context.PushParent(P_1);
 		P_1.Icon = (WindowIcon)new IconTypeConverter().ConvertFrom(context, CultureInfo.InvariantCulture, "/Assets/avalonia-logo.ico");
-		P_1.Title = "PFMS | Pablos Fishing Macro Studio";
-		P_1.Width = 1220.0;
-		P_1.Height = 800.0;
-		P_1.MinWidth = 980.0;
-		P_1.MinHeight = 680.0;
+		P_1.Title = "PFMS | Fishing Macro Studio";
+		P_1.Width = 1360.0;
+		P_1.Height = 860.0;
+		P_1.MinWidth = 1040.0;
+		P_1.MinHeight = 700.0;
 		P_1.WindowDecorations = WindowDecorations.None;
 		P_1.CanResize = true;
-		P_1.Background = new ImmutableSolidColorBrush(16777215u);
+		P_1.Background = new ImmutableSolidColorBrush(4278914317u);
 		P_1.TransparencyLevelHint = new WindowTransparencyLevel[2]
 		{
 			WindowTransparencyLevel.AcrylicBlur,
@@ -842,7 +842,7 @@ public class MainWindow : Window
 		context.PushParent(border4);
 		Border border5 = border4;
 		border5.Classes.Add("glass-shell");
-		border5.CornerRadius = new CornerRadius(8.0, 8.0, 8.0, 8.0);
+		border5.CornerRadius = new CornerRadius(2.0, 2.0, 2.0, 2.0);
 		border5.Padding = new Thickness(1.0, 1.0, 1.0, 1.0);
 		Grid grid2;
 		Grid grid = (grid2 = new Grid());
@@ -888,15 +888,15 @@ public class MainWindow : Window
 		Border border6 = (border7 = new Border());
 		((ISupportInitialize)border6).BeginInit();
 		children4.Add(border6);
-		border7.Width = 25.0;
-		border7.Height = 25.0;
-		border7.CornerRadius = new CornerRadius(5.0, 5.0, 5.0, 5.0);
-		border7.Background = new ImmutableSolidColorBrush(4287261940u);
+		border7.Width = 28.0;
+		border7.Height = 28.0;
+		border7.CornerRadius = new CornerRadius(2.0, 2.0, 2.0, 2.0);
+		border7.Background = new ImmutableSolidColorBrush(4291166061u);
 		TextBlock textBlock2;
 		TextBlock textBlock = (textBlock2 = new TextBlock());
 		((ISupportInitialize)textBlock).BeginInit();
 		border7.Child = textBlock;
-		textBlock2.Text = "PF";
+		textBlock2.Text = "P";
 		textBlock2.FontSize = 9.0;
 		textBlock2.FontWeight = FontWeight.Bold;
 		textBlock2.HorizontalAlignment = HorizontalAlignment.Center;
@@ -908,7 +908,7 @@ public class MainWindow : Window
 		TextBlock textBlock3 = (textBlock4 = new TextBlock());
 		((ISupportInitialize)textBlock3).BeginInit();
 		children5.Add(textBlock3);
-		textBlock4.Text = "PFMS";
+		textBlock4.Text = "PFMS / FISHING SYSTEM";
 		textBlock4.FontWeight = FontWeight.DemiBold;
 		textBlock4.FontSize = 13.0;
 		textBlock4.VerticalAlignment = VerticalAlignment.Center;
@@ -918,7 +918,7 @@ public class MainWindow : Window
 		TextBlock textBlock5 = (textBlock6 = new TextBlock());
 		((ISupportInitialize)textBlock5).BeginInit();
 		children6.Add(textBlock5);
-		textBlock6.Text = "PABLOS FISHING MACRO STUDIO";
+		textBlock6.Text = "CONTROL SURFACE";
 		textBlock6.Classes.Add("eyebrow");
 		textBlock6.VerticalAlignment = VerticalAlignment.Center;
 		((ISupportInitialize)textBlock6).EndInit();
