@@ -632,6 +632,8 @@ public class MainWindow : Window
 
 	private Grid? _rodCatalogView;
 
+	private Grid? _rodEditorView;
+
 	[CompilerGenerated]
 	private static Action<object> _0021XamlIlPopulateOverride;
 
@@ -656,6 +658,14 @@ public class MainWindow : Window
 		if (e.PropertyName == "IsEditorOpen" && _rodCatalogView != null && sender is MainViewModel viewModel)
 		{
 			_rodCatalogView.IsVisible = !viewModel.IsEditorOpen;
+			if (viewModel.IsEditorOpen)
+			{
+				BuildRodEditor(viewModel);
+			}
+			else if (_rodEditorView != null)
+			{
+				_rodEditorView.IsVisible = false;
+			}
 		}
 		if (e.PropertyName == "VisionBarStrip")
 		{
@@ -691,7 +701,7 @@ public class MainWindow : Window
 		Grid toolbar = new Grid
 		{
 			Background = new SolidColorBrush(Color.Parse("#111615")),
-			ColumnDefinitions = new ColumnDefinitions("220,Auto,*,Auto,Auto"),
+			ColumnDefinitions = new ColumnDefinitions("220,*,Auto,Auto"),
 			Margin = new Thickness(0, 0, 0, 1)
 		};
 		catalog.Children.Add(toolbar);
@@ -699,23 +709,12 @@ public class MainWindow : Window
 		ComboBox category = new ComboBox
 		{
 			Classes = { "catalog-category" },
-			ItemsSource = new[] { "Fishing Rods", "Harpoon Guns", "Spears" },
+			ItemsSource = new[] { "Fishing Rods", "Settings" },
 			SelectedIndex = 0,
 			Margin = new Thickness(14, 9, 10, 9),
 			HorizontalContentAlignment = HorizontalAlignment.Left
 		};
 		toolbar.Children.Add(category);
-
-		TextBlock unlocked = new TextBlock
-		{
-			Text = "64% Unlocked",
-			FontStyle = FontStyle.Italic,
-			VerticalAlignment = VerticalAlignment.Center,
-			Foreground = new SolidColorBrush(Color.Parse("#C5FF6D")),
-			FontWeight = FontWeight.SemiBold
-		};
-		Grid.SetColumn(unlocked, 1);
-		toolbar.Children.Add(unlocked);
 
 		TextBox search = new TextBox
 		{
@@ -724,7 +723,7 @@ public class MainWindow : Window
 			HorizontalContentAlignment = HorizontalAlignment.Left,
 			Classes = { "catalog-search" }
 		};
-		Grid.SetColumn(search, 2);
+		Grid.SetColumn(search, 1);
 		toolbar.Children.Add(search);
 
 		Button viewMode = new Button
@@ -734,7 +733,7 @@ public class MainWindow : Window
 			Margin = new Thickness(4, 9, 4, 9)
 		};
 		ToolTip.SetTip(viewMode, "Toggle catalog view");
-		Grid.SetColumn(viewMode, 3);
+		Grid.SetColumn(viewMode, 2);
 		toolbar.Children.Add(viewMode);
 
 		Button menu = new Button
@@ -745,8 +744,21 @@ public class MainWindow : Window
 		};
 		ToolTip.SetTip(menu, "Open menu");
 		menu.Click += (_, _) => category.IsDropDownOpen = !category.IsDropDownOpen;
-		Grid.SetColumn(menu, 4);
+		Grid.SetColumn(menu, 3);
 		toolbar.Children.Add(menu);
+		category.SelectionChanged += (_, _) =>
+		{
+			if (category.SelectedIndex == 1)
+			{
+				viewModel.NavigateCommand.Execute("Settings");
+				catalog.IsVisible = false;
+			}
+			else if (!viewModel.IsEditorOpen)
+			{
+				viewModel.NavigateCommand.Execute("Configurations");
+				catalog.IsVisible = true;
+			}
+		};
 
 		ScrollViewer rail = new ScrollViewer
 		{
@@ -856,6 +868,121 @@ public class MainWindow : Window
 		Grid.SetRow(actions, 2);
 		body.Children.Add(actions);
 		return card;
+	}
+
+	private void BuildRodEditor(MainViewModel viewModel)
+	{
+		if (_rodEditorView != null)
+		{
+			_rodEditorView.IsVisible = true;
+			return;
+		}
+		if (base.Content is not Border shell || shell.Child is not Grid shellGrid || viewModel.SelectedConfiguration == null)
+		{
+			return;
+		}
+
+		ConfigurationItemViewModel rod = viewModel.SelectedConfiguration;
+		Grid editor = new Grid
+		{
+			Background = new SolidColorBrush(Color.Parse("#0B0D0D")),
+			RowDefinitions = new RowDefinitions("64,*,58")
+		};
+		Grid.SetRow(editor, 1);
+		editor.SetValue(Panel.ZIndexProperty, 30);
+		shellGrid.Children.Add(editor);
+		_rodEditorView = editor;
+
+		Grid header = new Grid
+		{
+			Background = new SolidColorBrush(Color.Parse("#111615")),
+			ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto"),
+			Margin = new Thickness(18, 0)
+		};
+		editor.Children.Add(header);
+		Button back = new Button { Content = "[Back]", Classes = { "back-button" }, VerticalAlignment = VerticalAlignment.Center };
+		back.Command = viewModel.CloseEditorCommand;
+		header.Children.Add(back);
+		StackPanel heading = new StackPanel { Margin = new Thickness(18, 0), VerticalAlignment = VerticalAlignment.Center, Spacing = 3 };
+		TextBlock kicker = new TextBlock { Text = "ROD SETUP", FontSize = 10, LetterSpacing = 1.5, Foreground = new SolidColorBrush(Color.Parse("#C5FF6D")) };
+		heading.Children.Add(kicker);
+		TextBlock title = new TextBlock { Text = rod.Name, FontSize = 21, FontWeight = FontWeight.Bold, Foreground = new SolidColorBrush(Color.Parse("#E9F0E8")) };
+		heading.Children.Add(title);
+		Grid.SetColumn(heading, 1);
+		header.Children.Add(heading);
+		TextBlock mode = new TextBlock { Text = "YOLO AI / ACTIVE PROFILE", FontSize = 10, VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Color.Parse("#8A968F")) };
+		Grid.SetColumn(mode, 2);
+		header.Children.Add(mode);
+
+		ScrollViewer scroll = new ScrollViewer { Padding = new Thickness(22, 18), VerticalScrollBarVisibility = ScrollBarVisibility.Auto };
+		Grid.SetRow(scroll, 1);
+		editor.Children.Add(scroll);
+		StackPanel content = new StackPanel { Spacing = 14, MaxWidth = 920 };
+		scroll.Content = content;
+		content.Children.Add(EditorSection("IDENTITY", "Name and description shown on the rod catalog."));
+		content.Children.Add(EditorField("Rod name", rod.Name, value => rod.Name = value));
+		content.Children.Add(EditorField("Description", rod.Description, value => rod.Description = value, true));
+		content.Children.Add(EditorSection("RUNTIME PROFILE", "The existing fishing engine uses these values when the rod is equipped."));
+		Grid metrics = new Grid { ColumnDefinitions = new ColumnDefinitions("*,*,*"), ColumnSpacing = 10 };
+		metrics.Children.Add(EditorMetric("MODE", rod.Model.Fishing.Mode.ToString(), "Detection pipeline"));
+		Grid.SetColumn(metrics.Children[^1], 0);
+		metrics.Children.Add(EditorMetric("TARGET CLASS", rod.Model.Fishing.TargetClassId.ToString(), "YOLO class id"));
+		Grid.SetColumn(metrics.Children[^1], 1);
+		metrics.Children.Add(EditorMetric("FRAME RATE", rod.Model.Fishing.Rod.TargetFramesPerSecond + " FPS", "Capture target"));
+		Grid.SetColumn(metrics.Children[^1], 2);
+		content.Children.Add(metrics);
+		content.Children.Add(EditorSection("SETUP ROUTES", "Use the existing tools below to calibrate the live screen regions and detection behavior."));
+		Grid routes = new Grid { ColumnDefinitions = new ColumnDefinitions("*,*,*"), ColumnSpacing = 10 };
+		routes.Children.Add(EditorAction("SCAN AREA", "Select fishing region", rod.SelectFishingScanAreaCommand));
+		Grid.SetColumn(routes.Children[^1], 0);
+		routes.Children.Add(EditorAction("MODEL", "Browse YOLO model", rod.BrowseModelFileCommand));
+		Grid.SetColumn(routes.Children[^1], 1);
+		routes.Children.Add(EditorAction("COVER", "Choose card image", rod.BrowseCoverImageCommand));
+		Grid.SetColumn(routes.Children[^1], 2);
+		content.Children.Add(routes);
+
+		Grid footer = new Grid { Background = new SolidColorBrush(Color.Parse("#111615")), ColumnDefinitions = new ColumnDefinitions("*,Auto"), Margin = new Thickness(18, 0) };
+		Grid.SetRow(footer, 2);
+		editor.Children.Add(footer);
+		TextBlock status = new TextBlock { Text = "Changes are saved to this rod profile", VerticalAlignment = VerticalAlignment.Center, Foreground = new SolidColorBrush(Color.Parse("#8A968F")), FontSize = 11 };
+		footer.Children.Add(status);
+		Button save = new Button { Content = "Save rod", Classes = { "equip-button" }, VerticalAlignment = VerticalAlignment.Center, Padding = new Thickness(24, 9) };
+		save.Command = viewModel.SaveConfigurationCommand;
+		Grid.SetColumn(save, 1);
+		footer.Children.Add(save);
+	}
+
+	private static TextBlock EditorSection(string title, string description)
+	{
+		return new TextBlock { Text = title + "\n" + description, FontSize = 11, Foreground = new SolidColorBrush(Color.Parse("#8A968F")), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 8, 0, 0) };
+	}
+
+	private static Control EditorField(string label, string value, Action<string> changed, bool multiline = false)
+	{
+		StackPanel field = new StackPanel { Spacing = 5 };
+		field.Children.Add(new TextBlock { Text = label.ToUpperInvariant(), FontSize = 10, LetterSpacing = 1.1, Foreground = new SolidColorBrush(Color.Parse("#8A968F")) });
+		TextBox input = new TextBox { Text = value, Classes = { "editor-input" }, AcceptsReturn = multiline, Height = multiline ? 72 : 38, TextWrapping = TextWrapping.Wrap };
+		input.TextChanged += (_, _) => changed(input.Text ?? string.Empty);
+		field.Children.Add(input);
+		return field;
+	}
+
+	private static Border EditorMetric(string label, string value, string hint)
+	{
+		StackPanel stack = new StackPanel { Spacing = 4 };
+		stack.Children.Add(new TextBlock { Text = label, FontSize = 9, LetterSpacing = 1, Foreground = new SolidColorBrush(Color.Parse("#8A968F")) });
+		stack.Children.Add(new TextBlock { Text = value, FontSize = 17, FontWeight = FontWeight.Bold, Foreground = new SolidColorBrush(Color.Parse("#C5FF6D")) });
+		stack.Children.Add(new TextBlock { Text = hint, FontSize = 10, Foreground = new SolidColorBrush(Color.Parse("#66736B")) });
+		return new Border { Child = stack, Background = new SolidColorBrush(Color.Parse("#151C19")), BorderBrush = new SolidColorBrush(Color.Parse("#425048")), BorderThickness = new Thickness(1), Padding = new Thickness(12), CornerRadius = new CornerRadius(2) };
+	}
+
+	private static Border EditorAction(string label, string text, System.Windows.Input.ICommand command)
+	{
+		StackPanel stack = new StackPanel { Spacing = 8 };
+		stack.Children.Add(new TextBlock { Text = label, FontSize = 9, LetterSpacing = 1, Foreground = new SolidColorBrush(Color.Parse("#8A968F")) });
+		Button button = new Button { Content = text, Command = command, Classes = { "ghost-button" }, HorizontalAlignment = HorizontalAlignment.Stretch };
+		stack.Children.Add(button);
+		return new Border { Child = stack, Background = new SolidColorBrush(Color.Parse("#111615")), BorderBrush = new SolidColorBrush(Color.Parse("#26312C")), BorderThickness = new Thickness(1), Padding = new Thickness(10), CornerRadius = new CornerRadius(2) };
 	}
 
 	private static TextBlock BoundText(string label, string value, string color)
