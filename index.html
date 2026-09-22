@@ -460,6 +460,179 @@
   }
   .ops span{ color: var(--text); }
 
+  /* ---------- wiki ---------- */
+  .wiki-layout{
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .wiki-sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: sticky;
+    top: 88px;
+  }
+  .wiki-cat-btn{
+    text-align: left;
+    font-family: var(--sans);
+    background: var(--glass);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .wiki-cat-btn .wiki-cat-name{
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .wiki-cat-btn .wiki-cat-desc{
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--text-dim);
+    margin-top: 3px;
+  }
+  .wiki-cat-btn:hover{ border-color: rgba(255,255,255,0.2); background: var(--glass-hi); }
+  .wiki-cat-btn.active{ background: var(--text); border-color: var(--text); }
+  .wiki-cat-btn.active .wiki-cat-name{ color: #0A0A12; }
+  .wiki-cat-btn.active .wiki-cat-desc{ color: rgba(10,10,18,0.6); }
+
+  .wiki-md-badge{
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .wiki-md-badge::before{
+    content:"";
+    width: 5px; height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  .wiki-content{
+    background: var(--glass);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 40px 44px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    min-height: 320px;
+  }
+  @media (max-width: 720px){
+    .wiki-layout{ grid-template-columns: 1fr; }
+    .wiki-sidebar{ flex-direction: row; flex-wrap: wrap; position: static; }
+    .wiki-cat-btn{ flex: 1 1 auto; }
+    .wiki-content{ padding: 26px 22px; }
+  }
+
+  /* markdown typography rendered inside .wiki-content */
+  .wiki-content h1{
+    font-size: clamp(22px, 3vw, 28px);
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .wiki-content h2{
+    font-size: 19px;
+    margin-top: 40px;
+    margin-bottom: 14px;
+  }
+  .wiki-content h2:first-of-type{ margin-top: 0; }
+  .wiki-content h3{
+    font-size: 15px;
+    margin-top: 26px;
+    margin-bottom: 10px;
+  }
+  .wiki-content p{ font-size: 14.5px; margin-bottom: 14px; }
+  .wiki-content ul, .wiki-content ol{
+    color: var(--text-dim);
+    font-size: 14.5px;
+    line-height: 1.85;
+    margin: 0 0 16px 22px;
+  }
+  .wiki-content li{ margin-bottom: 4px; }
+  .wiki-content li::marker{ color: var(--accent-dim); }
+  .wiki-content a{
+    color: var(--accent-dim);
+    text-decoration: underline;
+    text-decoration-color: rgba(255,255,255,0.25);
+    text-underline-offset: 3px;
+  }
+  .wiki-content a:hover{ color: var(--accent); }
+  .wiki-content strong{ color: var(--text); font-weight: 600; }
+  .wiki-content code{
+    font-family: var(--mono);
+    font-size: 0.87em;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--accent-dim);
+    padding: 2px 6px;
+    border-radius: 5px;
+  }
+  .wiki-content pre{
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    overflow-x: auto;
+    margin-bottom: 18px;
+  }
+  .wiki-content pre code{
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .wiki-content table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    display: block;
+    overflow-x: auto;
+  }
+  .wiki-content th, .wiki-content td{
+    border: 1px solid var(--line);
+    padding: 10px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .wiki-content th{
+    background: rgba(255,255,255,0.04);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+    white-space: nowrap;
+  }
+  .wiki-content td{ color: var(--text-dim); }
+  .wiki-content blockquote{
+    border-left: 3px solid var(--accent);
+    padding: 2px 0 2px 18px;
+    margin: 0 0 18px;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+  .wiki-content hr{ border: none; border-top: 1px solid var(--line); margin: 28px 0; }
+
   /* ---------- footer ---------- */
   footer{
     border-top: 1px solid var(--line);
@@ -499,6 +672,7 @@
       <a href="#interface">Interface</a>
       <a href="#models">Configurations</a>
       <a href="#formulas">Formulas</a>
+      <a href="#wiki">Wiki</a>
       <a href="https://github.com/Pabloxdl/pfms" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
@@ -702,6 +876,678 @@
   </div>
 </section>
 
+<section id="wiki">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Documentation</div>
+      <h2>Wiki</h2>
+      <p>In-depth guides for building on PFMS. Written in Markdown, rendered right here.</p>
+    </div>
+
+    <span class="wiki-md-badge reveal">Markdown-powered</span>
+
+    <div class="wiki-layout reveal">
+      <nav class="wiki-sidebar" id="wiki-sidebar">
+        <button class="wiki-cat-btn" data-wiki="plugins" type="button">
+          <span class="wiki-cat-name">Plugin API</span>
+          <span class="wiki-cat-desc">Manifest · permissions · extensions</span>
+        </button>
+        <button class="wiki-cat-btn" data-wiki="formulas" type="button">
+          <span class="wiki-cat-name">Formulas</span>
+          <span class="wiki-cat-desc">Syntax · variables · functions</span>
+        </button>
+      </nav>
+
+      <article class="wiki-content" id="wiki-content">
+        <div style="padding:24px;text-align:center;color:var(--text-dim);font-size:14px;">Loading wiki...</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script type="text/markdown" id="md-plugins">
+# PFMS Plugin API
+
+This document describes the PFMS plugin system: the package format, manifest, trust levels, permissions, settings schema, extension interfaces, rod integration, and the lifecycle rules for publishing plugins to the community.
+
+Plugins let creators add new mechanics to rods — new rod modes, class-selection behavior, target logic, and per-frame trackers for custom minigames — **without modifying PFMS itself**. PFMS discovers the plugin's parameters and renders their UI automatically, so a plugin ships its own settings surface.
+
+## What the current build supports
+
+- Plugin manifests with validation
+- `.zip` package import from the rod editor (`IMPORT PLUGIN`), with re-import replacing the installed version
+- Per-user plugin catalog discovery
+- **Executable plugin loading**: PFMS loads the plugin assembly, instantiates the entry type, and registers its extensions
+- **Live lifecycle**: import, uninstall, and the global enable toggle all apply immediately — no restart required
+- Plugin attachment to rods, with per-rod persisted settings
+- Schema-driven parameter UI: plugins declare their own fields and PFMS renders them
+- Uninstall with confirmation
+- Mandatory warnings when importing a rod that requires plugins
+- Extension contracts for rod modes, class modes, macro rules, and falling-note trackers
+
+## Package layout
+
+A plugin is a `.zip` file containing one `plugin.json` manifest plus the plugin assembly. The manifest may be at the package root or inside one top-level folder.
+
+```text
+creator.custom-minigame.zip
+|-- plugin.json
+|-- Creator.CustomMinigame.dll
+|-- README.md
+|-- LICENSE.txt
+```
+
+Rules enforced by the importer:
+
+- The package must contain **exactly one** valid `plugin.json`.
+- Archive entries cannot escape the extraction directory (path traversal is rejected).
+- The plugin ID determines the installation folder; re-importing the same ID replaces the installed version (this is the update path).
+
+## Installation directory
+
+Plugins are extracted to the per-user catalog:
+
+```text
+%APPDATA%\Pfm\plugins\<plugin-id>\
+|-- plugin.json
+|-- <AssemblyFile>
+```
+
+## Manifest
+
+`plugin.json` is case-insensitive JSON.
+
+```json
+{
+  "id": "creator.custom-minigame",
+  "name": "Custom Minigame Inputs",
+  "author": "CreatorName",
+  "version": "1.0.0",
+  "minimumPfmsVersion": "1.4.0",
+  "description": "Adds custom input rules for a non-standard minigame.",
+  "assemblyFile": "Creator.CustomMinigame.dll",
+  "entryType": "Creator.CustomMinigame.CustomMinigamePlugin",
+  "trustLevel": "Community",
+  "reviewedVersion": "",
+  "reviewedFileHash": "",
+  "reviewedAtUtc": null,
+  "features": [
+    "Custom minigame rod mode",
+    "Conditional click rule"
+  ],
+  "permissions": [
+    "ReadRodData",
+    "ModifyRodData",
+    "AddRodModes",
+    "AddMacroRules",
+    "ReadGameState"
+  ],
+  "dependencies": []
+}
+```
+
+Field reference:
+
+| Field | Required | Meaning |
+| --- | --- | --- |
+| `id` | Yes | Stable unique plugin ID. Use a creator-prefixed name (`creator.my-plugin`). Also the install folder name. |
+| `name` | Yes | Display name shown in the catalog and rod editor. |
+| `author` | Yes | Creator name shown in the catalog. |
+| `version` | No | Plugin version (semantic versioning recommended). Default `0.0.0`. |
+| `minimumPfmsVersion` | No | Minimum PFMS release the plugin supports. |
+| `description` | No | Short description shown under the plugin name. |
+| `assemblyFile` | Yes for loading | DLL file name inside the package that PFMS loads. |
+| `entryType` | Yes for loading | Fully qualified type name implementing `IPfmPlugin`. |
+| `trustLevel` | No | `Unreviewed`, `Community`, `Trusted`, or `Blocked`. Default `Unreviewed`. |
+| `reviewedVersion` | Yes for `Trusted` | The version that was reviewed. |
+| `reviewedFileHash` | No | Hash of the reviewed package file. |
+| `reviewedAtUtc` | No | Review timestamp. |
+| `features` | No | Human-readable list of what the plugin adds. |
+| `permissions` | No | Declared `PluginPermission` values. |
+| `dependencies` | No | IDs of other required plugins. |
+
+Validation: missing `id`, `name`, or `author` rejects the manifest. A `Trusted` manifest without `reviewedVersion` rejects the manifest. Invalid manifests are excluded from the catalog and fail import.
+
+## Trust levels
+
+| Level | Meaning |
+| --- | --- |
+| `Unreviewed` | Locally imported or newly submitted package |
+| `Community` | Shared package without PFMS review |
+| `Trusted` | Version reviewed and approved by the maintainers or approved reviewers |
+| `Blocked` | Package is never loaded or attached |
+
+Trust rules:
+
+- `Blocked` plugins are skipped by the loader and cannot be attached.
+- Trust is version-specific: a new package file must be re-reviewed before it inherits `Trusted`.
+- Reviewers record `reviewedVersion`, and ideally `reviewedFileHash` and `reviewedAtUtc`.
+
+## Permissions
+
+Declared in the manifest and shown to users before installation.
+
+| Permission | Intended use |
+| --- | --- |
+| `ReadRodData` | Read the rod configuration |
+| `ModifyRodData` | Add or update approved rod settings |
+| `AddEditorControls` | Contribute editor UI through the settings schema |
+| `AddRodModes` | Register rod modes |
+| `AddClassModes` | Register class-selection behavior |
+| `AddMacroRules` | Register macro rules |
+| `ReadGameState` | Read approved structured detection/runtime state |
+| `ReadExternalFiles` | Read a declared external file source |
+| `NetworkAccess` | Use a declared network service |
+| `ExecuteExternalPrograms` | Launch external processes |
+
+The last three are high risk and should be exceptional. A plugin should never request them for ordinary detection or configuration logic.
+
+## Enabling plugins
+
+Plugins are disabled globally by default.
+
+- Toggle **Enable plugins** in Settings. The change applies immediately: the host loads (or unloads) installed plugins live.
+- A rod's attached plugins only run while the global toggle is enabled.
+
+## Core interfaces
+
+Contracts live in `Pfm.Core.Plugins`. Reference the PFMS assemblies from your plugin project.
+
+### Entry point
+
+```csharp
+public interface IPfmPlugin
+{
+    PluginManifest Manifest { get; }
+    void Register(IPluginRegistry registry);
+}
+```
+
+`Register` is the only registration entry point. Register only the extensions your manifest declares.
+
+### Registry
+
+```csharp
+public interface IPluginRegistry
+{
+    void RegisterRodMode(IRodModeExtension extension);
+    void RegisterClassMode(IClassModeExtension extension);
+    void RegisterMacroRule(IMacroRuleExtension extension);
+    void RegisterNoteTracker(INoteTrackerExtension extension);
+}
+```
+
+### Settings schema (plugin-defined UI)
+
+Any extension can implement `IPluginSettingsProvider` to declare its own parameters. PFMS renders these automatically in the rod editor under **PLUGIN PARAMETERS** for every rod the plugin is attached to — no PFMS code changes needed.
+
+```csharp
+public enum PluginSettingKind
+{
+    Text,
+    Integer,
+    Number,
+    Boolean,
+    Formula,
+    ClassIdList
+}
+
+public sealed record PluginSettingDescriptor(
+    string Key,
+    string Label,
+    PluginSettingKind Kind,
+    string? DefaultValue = null,
+    string? Description = null);
+
+public interface IPluginSettingsProvider
+{
+    IReadOnlyList<PluginSettingDescriptor> GetSettingsSchema();
+}
+```
+
+Behavior:
+
+- `Text` / `Formula` render as text fields (formula is multiline).
+- `Integer` renders as a number field.
+- `Number` renders as a decimal field.
+- `Boolean` renders as a toggle.
+- `ClassIdList` accepts comma-separated IDs and stores them as a list of integers.
+- Empty values are stored as absent; defaults apply when a value is not set.
+
+At runtime PFMS decodes the stored per-rod values into a plain dictionary passed to your extension:
+
+```csharp
+public static class PluginSettingsDecoder
+{
+    public static Dictionary<string, object?> Decode(IReadOnlyDictionary<JsonNode?>? source);
+}
+```
+
+Value types at runtime: `int`, `double`, `bool`, `string`, or `List<int>` for `ClassIdList`. Keys are case-insensitive. Missing keys are absent from the dictionary — always handle defaults in the plugin.
+
+### Falling-note trackers
+
+Use for mechanics where the bar must target transient objects (falling notes, moving targets) instead of only the normal fish.
+
+```csharp
+public readonly record struct NoteTrackingDecision(
+    bool HasTarget,
+    bool FlowMode,
+    int TargetX,
+    int TargetY,
+    int ErrorPixels,
+    int TrackedNoteCount);
+
+public interface INoteTrackerExtension
+{
+    string Id { get; }
+    string DisplayName { get; }
+    string Description { get; }
+    IReadOnlyList<PluginPermission> RequiredPermissions { get; }
+    NoteTrackingDecision Track(
+        IReadOnlyList<AiDetectionBox> detections,
+        int playerCenterX,
+        int frameWidth,
+        int frameHeight,
+        IReadOnlyDictionary<string, object?> settings);
+}
+```
+
+Contract:
+
+- Called per frame with every YOLO detection box for the active rod.
+- Return `HasTarget = false` to decline (PFMS then uses normal fish control). Returning false is the normal case when your objects are not on screen.
+- Return `HasTarget = true` with `ErrorPixels` = signed horizontal error (target minus player center). PFMS feeds this into the existing PD bar controller, which keeps ownership of input, timing, cancellation, and safety.
+- `FlowMode` is informational state (for example, an alternate fish icon phase).
+- Never send input or touch files/network from a tracker.
+
+Detection geometry is region-relative: `AiDetectionBox(int X, int Y, int Width, int Height, double Confidence, int ClassId)`.
+
+### Rod modes
+
+```csharp
+public interface IRodModeExtension
+{
+    string Id { get; }
+    string DisplayName { get; }
+    string Description { get; }
+    IReadOnlyList<PluginPermission> RequiredPermissions { get; }
+    void Configure(RodConfig rod, IReadOnlyDictionary<string, object?> settings);
+}
+```
+
+For a new fishing lifecycle or custom minigame configuration. Store user-editable values in the rod's plugin settings via the schema; do not use display names as IDs.
+
+### Class modes
+
+```csharp
+public interface IClassModeExtension
+{
+    string Id { get; }
+    string DisplayName { get; }
+    string Description { get; }
+    IReadOnlyList<PluginPermission> RequiredPermissions { get; }
+    void Configure(FishingProfile profile, IReadOnlyDictionary<string, object?> settings);
+}
+```
+
+For custom target/control/progress class behavior. Preserve PFMS profile validation rules and never create duplicate class IDs.
+
+### Macro rules
+
+```csharp
+public interface IMacroRuleExtension
+{
+    string Id { get; }
+    string DisplayName { get; }
+    string Description { get; }
+    IReadOnlyList<PluginPermission> RequiredPermissions { get; }
+    bool Evaluate(
+        IReadOnlyDictionary<string, object?> state,
+        IReadOnlyDictionary<string, object?> settings);
+}
+```
+
+Return only a decision. PFMS retains control of input execution, ordering, cancellation, and error handling.
+
+## Rod integration
+
+When a plugin is attached to a rod, PFMS stores with the rod:
+
+- Plugin ID, name, version, trust level, and source (as a dependency record)
+- The plugin's parameter values (per plugin ID, keyed by setting key)
+
+These persist through save/export and are preserved when a plugin is uninstalled or missing, so reinstalling restores behavior.
+
+Importing a rod with dependencies always shows a warning listing them with trust levels; the rod stays disabled until the user enables it. A missing, disabled, or blocked plugin never silently substitutes different behavior — PFMS simply uses standard control until the plugin is available.
+
+## Example: full plugin
+
+A complete minimal plugin implementing a tracker with its own settings UI:
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Pfm.Core.Plugins;
+using Pfm.Core.Vision;
+
+namespace Creator.ExamplePlugin;
+
+public sealed class ExamplePlugin : IPfmPlugin
+{
+    public PluginManifest Manifest { get; } = new PluginManifest
+    {
+        Id = "creator.example",
+        Name = "Example Tracker",
+        Author = "CreatorName",
+        Version = "1.0.0"
+    };
+
+    public void Register(IPluginRegistry registry)
+    {
+        registry.RegisterNoteTracker(new ExampleTracker());
+    }
+}
+
+internal sealed class ExampleTracker : INoteTrackerExtension, IPluginSettingsProvider
+{
+    public string Id => "creator.example.tracker";
+    public string DisplayName => "Example Tracker";
+    public string Description => "Targets the configured class id.";
+    public IReadOnlyList<PluginPermission> RequiredPermissions { get; } =
+        new[] { PluginPermission.ReadGameState };
+
+    public IReadOnlyList<PluginSettingDescriptor> GetSettingsSchema() => new[]
+    {
+        new PluginSettingDescriptor("target_class_id", "Target class id",
+            PluginSettingKind.Integer, "-1", "YOLO class id to chase."),
+        new PluginSettingDescriptor("use_confidence", "Require confidence > 0.8",
+            PluginSettingKind.Boolean, "true")
+    };
+
+    public NoteTrackingDecision Track(
+        IReadOnlyList<AiDetectionBox> detections,
+        int playerCenterX,
+        int frameWidth,
+        int frameHeight,
+        IReadOnlyDictionary<string, object?> settings)
+    {
+        int targetClassId = settings.TryGetValue("target_class_id", out object? c) && c is int id ? id : -1;
+        bool requireConfidence = !settings.TryGetValue("use_confidence", out object? b) || b is not bool flag || flag;
+
+        AiDetectionBox? best = detections
+            .Where(box => box.ClassId == targetClassId)
+            .Where(box => !requireConfidence || box.Confidence > 0.8)
+            .OrderByDescending(box => box.Confidence)
+            .FirstOrDefault();
+        if (best is not AiDetectionBox box) return new NoteTrackingDecision(false, false, 0, 0, 0, 0);
+
+        int targetX = box.X + box.Width / 2;
+        int error = (int)Math.Round((double)Math.Clamp(targetX - playerCenterX, -frameWidth, frameWidth));
+        return new NoteTrackingDecision(true, false, targetX, box.Y + box.Height / 2, error, 1);
+    }
+}
+```
+
+Corresponding `plugin.json`:
+
+```json
+{
+  "id": "creator.example",
+  "name": "Example Tracker",
+  "author": "CreatorName",
+  "version": "1.0.0",
+  "assemblyFile": "Creator.ExamplePlugin.dll",
+  "entryType": "Creator.ExamplePlugin.ExamplePlugin",
+  "trustLevel": "Community",
+  "permissions": ["ReadGameState"]
+}
+```
+
+### Building
+
+Create a class library targeting the same .NET version as PFMS and reference the PFMS assemblies (the app assembly `PFMS` contains the `Pfm.Core.Plugins` namespace). Package the built DLL together with `plugin.json` into a `.zip`.
+
+The bundled **Note Flow Tracker** plugin (`creator.note-flow`) is a real-world reference implementation: it declares four settings (`flow_fish_class_id`, `note_class_ids`, `hitbox_padding_pixels`, `target_formula`), selects the lowest visible note each frame, reports Flow mode from the alternate fish class, and evaluates the optional target formula through PFMS's sandboxed `SafeNumericExpression` engine.
+
+## Plugin lifecycle
+
+| Action | Behavior |
+| --- | --- |
+| Import `.zip` | Extracts, validates the manifest, installs to the catalog, reloads the host live |
+| Re-import same ID | Replaces the installed version (update path) |
+| Attach to rod | Stores a dependency record on the rod; schema-driven fields appear immediately |
+| Detach from rod | Removes the dependency; saved settings are preserved on the rod |
+| Uninstall | Deletes the installed folder after confirmation, reloads the host, detaches from the current rod; rods keep saved settings |
+| Enable/disable globally | Loads or unloads all installed plugins immediately |
+| Restart | Attached plugins and settings reload automatically if plugins are enabled |
+
+## Compatibility and conflicts
+
+- Use semantic versioning; keep extension IDs stable across updates.
+- Declare the minimum supported PFMS version in the manifest.
+- Do not register two extensions with the same ID.
+- Declare plugin-to-plugin dependencies in the manifest.
+- Preserve unknown settings when a plugin is disabled, removed, or upgraded.
+
+## Safety requirements
+
+Plugins must not read credentials, browser data, unrelated files, or process memory. They must not start external programs or use the network unless the feature genuinely requires it and the manifest declares the permission.
+
+PFMS retains ownership of: rod validation, formula evaluation limits, input execution, ordering, cancellation, and import warnings. A plugin must not bypass these. Trackers and rules return decisions only; PFMS executes.
+
+## Review checklist (for Trusted submission)
+
+1. Confirm the package file matches the reviewed source and hash.
+2. Inspect every requested permission; question any high-risk permission.
+3. Check all dependencies and external files.
+4. Test install, attach, disable, re-import (update), uninstall, and rollback.
+5. Test invalid settings and plugin exceptions — a broken plugin must degrade to normal rod control, never crash PFMS or send stray input.
+6. Confirm the plugin changes nothing when globally disabled.
+7. Record the reviewed version and date in the manifest.
+</script>
+
+<script type="text/markdown" id="md-formulas">
+# PFMS Formula Guide
+
+PFMS formulas are bounded numeric expressions used to tune detection behavior, steering, triggers, and class influence. A formula returns a number. Boolean results are represented as `1` for true and `0` for false.
+
+## Limits and safety
+
+- Maximum length: 512 characters.
+- Maximum nesting depth: 32 levels.
+- Maximum operations: 256.
+- Division and remainder by zero are rejected.
+- Results must be finite numbers. `NaN` and infinity are rejected.
+- Unknown variables and functions are rejected.
+- Formula parsing does not execute code, access files, or access the network.
+
+Use `.` as the decimal separator. Whitespace is allowed between tokens.
+
+## Operators
+
+| Operator | Meaning | Example |
+| --- | --- | --- |
+| `()` | Grouping | `(a + b) * 0.5` |
+| `^` | Power | `distance ^ 2` |
+| `+` | Addition or unary plus | `x + 2` |
+| `-` | Subtraction or unary minus | `-error` |
+| `*` | Multiplication | `weight * distance` |
+| `/` | Division | `error / frame_width` |
+| `%` | Remainder | `class_id % 2` |
+| `<` `<=` `>` `>=` | Comparison | `confidence >= 0.8` |
+| `==` `!=` | Equality comparison | `class_id == 2` |
+| `&&` | Logical AND | `confidence > 0.8 && width > 10` |
+| `\|\|` | Logical OR | `class_id == 1 \|\| class_id == 2` |
+| `!` | Logical NOT | `!is_disabled` |
+
+Comparison and logical operators return `1` or `0`. Any non-zero number is true; zero is false.
+
+### Precedence
+
+From highest to lowest:
+
+1. Parentheses
+2. Unary `+`, `-`, `!`
+3. Power `^`
+4. Multiplication, division, remainder
+5. Addition and subtraction
+6. Comparisons
+7. Equality
+8. Logical AND `&&`
+9. Logical OR `||`
+
+Use parentheses when a rule needs to be obvious to another creator.
+
+## Constants and functions
+
+Built-in constants:
+
+- `pi`
+- `e`
+- `true` which equals `1`
+- `false` which equals `0`
+
+Built-in functions:
+
+| Function | Arguments | Meaning |
+| --- | ---: | --- |
+| `abs(x)` | 1 | Absolute value |
+| `sqrt(x)` | 1 | Square root |
+| `round(x)` | 1 | Nearest integer |
+| `floor(x)` | 1 | Round down |
+| `ceil(x)` | 1 | Round up |
+| `sign(x)` | 1 | `-1`, `0`, or `1` |
+| `min(a, b)` | 2 | Smaller value |
+| `max(a, b)` | 2 | Larger value |
+| `pow(a, b)` | 2 | `a` raised to `b` |
+| `clamp(x, low, high)` | 3 | Restrict `x` to a range |
+| `lerp(a, b, t)` | 3 | Linear interpolation from `a` to `b` |
+| `if(condition, when_true, when_false)` | 3 | Conditional value |
+
+`if` evaluates only the selected branch at runtime. This allows guarded expressions such as:
+
+```text
+if(frame_width > 0, player_x / frame_width, 0)
+```
+
+## Class influence formulas
+
+Class influence formulas are configured on each model class. They determine the numeric influence of that detected class in behavior calculations.
+
+Available variables:
+
+| Variable | Meaning |
+| --- | --- |
+| `x`, `y` | Detection box position |
+| `width`, `height` | Detection box size |
+| `center_x`, `center_y` | Detection box center |
+| `confidence` | Model confidence |
+| `class_id` | Model class number |
+| `frame_width`, `frame_height` | Captured frame dimensions |
+| `player_x`, `player_width` | Current player bar position and width |
+| `distance` | Detection distance from the player bar |
+| `distance_norm` | Normalized detection distance |
+| `overlap` | Detection overlap with the player bar |
+| `weight` | Class weight from the rod editor |
+| `direction` | Relative direction to the player bar |
+
+Examples:
+
+```text
+weight * confidence
+```
+
+```text
+if(overlap > 0, weight * 1.5, weight)
+```
+
+```text
+clamp(confidence * (1 + overlap), 0, 2)
+```
+
+## Steering formula
+
+The optional steering formula replaces the default weighted steering blend before the PD controller applies its final correction.
+
+Available variables:
+
+| Variable | Meaning |
+| --- | --- |
+| `pursuit_error` | Error generated by pursue classes |
+| `avoidance_error` | Error generated by avoidance classes |
+| `pursuit_weight` | Total pursue influence |
+| `avoidance_weight` | Total avoidance influence |
+| `legacy_error` | Existing fallback steering error |
+| `player_x` | Player bar position |
+| `frame_width` | Captured frame width |
+| `frame_height` | Captured frame height |
+
+Examples:
+
+```text
+pursuit_error - avoidance_error
+```
+
+```text
+lerp(legacy_error, pursuit_error - avoidance_error, 0.75)
+```
+
+```text
+clamp((pursuit_error * pursuit_weight) - (avoidance_error * avoidance_weight), -1, 1)
+```
+
+## Trigger formula
+
+The trigger formula is used by timed-click behavior to decide when the click condition is active. A non-zero result means true.
+
+Available variables:
+
+| Variable | Meaning |
+| --- | --- |
+| `overlap_max` | Largest current overlap |
+| `overlap_sum` | Sum of current overlaps |
+| `pursue_count` | Number of pursue detections |
+| `control_count` | Number of control detections |
+| `player_x` | Player bar position |
+| `player_width` | Player bar width |
+| `frame_width` | Captured frame width |
+| `frame_height` | Captured frame height |
+
+Examples:
+
+```text
+overlap_max > 0.65
+```
+
+```text
+overlap_max > 0.65 && pursue_count > 0
+```
+
+```text
+if(control_count > 0, overlap_sum > 0.5, false)
+```
+
+## Validation checklist
+
+1. Start with a short expression and add one condition at a time.
+2. Use `Validate formula` in the rod editor before saving.
+3. Keep normalized values in a known range with `clamp`.
+4. Guard divisions with `if` when a denominator can be zero.
+5. Test the rod in vision preview before running a macro.
+6. Record the intended variables and output range in the rod description when sharing it.
+
+## Common errors
+
+- `Unknown variable`: the variable is not available in that formula context.
+- `Unknown function`: only the functions listed above are supported.
+- `Function expects N argument(s)`: the function has the wrong number of arguments.
+- `Division by zero`: guard the denominator or use `if`.
+- `Formula contains too many operations`: simplify the expression.
+- `Formula result must be a finite number`: check powers, divisions, and square roots.
+</script>
+
 <footer>
   <div class="wrap">
     <p>v1.2.2 — made by Pablo, inspired by AsphaltCake IrusNeural</p>
@@ -709,7 +1555,44 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 <script>
+  // ---------- wiki: renders embedded Markdown source into the content pane ----------
+  (function(){
+    var sidebar = document.getElementById('wiki-sidebar');
+    var content = document.getElementById('wiki-content');
+    if(!sidebar || !content) return;
+
+    if(window.marked && marked.setOptions){
+      marked.setOptions({ gfm: true, breaks: false });
+    }
+
+    function renderWiki(id){
+      var srcEl = document.getElementById('md-' + id);
+      if(!srcEl){ return; }
+      var raw = srcEl.textContent.trim();
+      var html = (window.marked ? marked.parse(raw) : '<p>Markdown renderer failed to load.</p>');
+      content.innerHTML = html;
+
+      var btns = sidebar.querySelectorAll('.wiki-cat-btn');
+      btns.forEach(function(b){ b.classList.toggle('active', b.dataset.wiki === id); });
+    }
+
+    sidebar.querySelectorAll('.wiki-cat-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        renderWiki(btn.dataset.wiki);
+        content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+
+    var initial = 'plugins';
+    if(location.hash.indexOf('wiki-') === 1){
+      var fromHash = location.hash.replace('#wiki-', '');
+      if(document.getElementById('md-' + fromHash)) initial = fromHash;
+    }
+    renderWiki(initial);
+  })();
+
   // subtle scroll-reveal, no framework
   var els = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
